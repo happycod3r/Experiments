@@ -28,4 +28,4 @@ note = {
 }
 
 send_note_to_js(note, "note_from_py.json")
-get_note_from_js("note_from_js.json")
+#get_note_from_js("note_from_js.json")

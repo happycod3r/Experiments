@@ -24,4 +24,4 @@ note = {
     "text": "Hello Python!"
 }
 sendNoteToPy(note, "note_from_js.json")
-#console.info(getNoteFromPy("note_from_py.json"))
+//console.info(getNoteFromPy("note_from_py.json"))

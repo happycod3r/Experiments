@@ -18,8 +18,8 @@ just that purpose.
 
 Nothing in this repository is finished or really meant to be finished it's 
 just ideas. If you have any ideas on how to add to any of mine definitely 
-let me know submit a `Pull Request` or just hit me up on one of my social 
-links. 
+let me know. Either submit a `Pull Request` or just hit me up on one of my 
+social links. 
 
 I write code/markup in various languages so there will be a mix of file types
 and ideas. Mostly the
@@ -34,9 +34,6 @@ following:
 - CSS
 - Json
 - XML
-
-I'm a way better software dev than I am a web developer but I love using CSS.
-
 
 ## [Contributing](#contributing)
 
