@@ -17,14 +17,18 @@ def filter_fs(item: Tuple[str, int], file_type: str=None, item_type: str=None): 
     """ Applies the given filter to each step and yields the result. """
     if file_type is None:
         if item_type is None or item_type == "all":
+            SEARCH_CACHE.append(item)
             yield item
         elif item_type == "dir":
             if item[1] == "dir":
+                SEARCH_CACHE.append(item)
                 yield item
         elif item_type == "file":
             if item[1] == "file":
+                SEARCH_CACHE.append(item)
                 yield item
     if item[0].endswith(file_type):
+        SEARCH_CACHE.append(item)
         yield item
  
 def fswalk(path: str):
@@ -55,10 +59,11 @@ def start_fswalk(filter):
     for (i, step) in enumerate(fswalk("C:\\")):
         if step[1] == "dir":
             current_dir = step[0]
+            #print(current_folder)
         for item in filter_fs(step, filter):
             yield (item, os.path.dirname(os.path.realpath(current_dir)))
         
-#//////////// TUI //////
+#//////////// TUI /// 
 finished = False
 search_filters = []
 while not finished:
@@ -71,7 +76,6 @@ while not finished:
         for i in range(len(search_filters)):
             for (count, step) in enumerate(start_fswalk(search_filters[i])):
                 print(count, step[0][0], step[1]) # do something with step here???
-                SEARCH_CACHE.append(step)
-                print(SEARCH_CACHE) # ex. [('Flag987.flag', 'file')]
-                finished = True  
+                print(FS_CACHE)
+                finished = True
                 break
